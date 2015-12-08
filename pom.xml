@@ -41,11 +41,12 @@
 						</source>
 					</sources>
 					<linkerStartOptions>
-						<linkerStartOption>-shared -lpcap ${project.build.directory}/objs/jpcap.o ${project.build.directory}/objs/process.o</linkerStartOption>
+						<linkerStartOption>-shared -lpcap </linkerStartOption>
 					</linkerStartOptions>
 					<compilerStartOptions>
 						<compilerStartOption>-fPIC</compilerStartOption>
 					</compilerStartOptions>
+					<linkerFinalName>libjpcap.so</linkerFinalName>
 				</configuration>
 				<executions>
 					<execution>
