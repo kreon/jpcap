@@ -177,6 +177,8 @@ public class PacketCapture extends PacketCaptureBase implements PacketCaptureCap
 
 	static {
 		System.err.print("PacketCapture: loading native library jpcap.. ");
+		System.err.println("java.library.path=" + System.getProperty("java.library.path"));
+		System.err.println("Full name of pcap wrapper is: " + System.mapLibraryName(LIB_PCAP_WRAPPER));
 		System.loadLibrary(LIB_PCAP_WRAPPER);
 		System.err.println("ok");
 	}

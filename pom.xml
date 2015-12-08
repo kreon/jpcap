@@ -25,6 +25,9 @@
 					<javahClassNames>
 						<javahClassName>net.sourceforge.jpcap.capture.PacketCapture</javahClassName>
 					</javahClassNames>
+					<javahClassNames>
+						<javahClassName>net.sourceforge.jpcap.capture.PacketCapture</javahClassName>
+					</javahClassNames>
 					<compilerProvider>generic</compilerProvider>
 					<compilerExecutable>g++</compilerExecutable>
 					<linkerExecutable>g++</linkerExecutable>
@@ -46,19 +49,14 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>javah</id>
-						<phase>generate-sources</phase>
+						<id>do_run</id>
+						<phase>package</phase>
 						<goals>
 							<goal>javah</goal>
+							<goal>compile</goal>
+							<goal>link</goal>
 						</goals>
 						<inherited>false</inherited>
-						<configuration>
-							<javahOS>linux</javahOS>
-							<javahOutputDirectory>source/cpp</javahOutputDirectory>
-							<javahClassNames>
-								<javahClassName>net.sourceforge.jpcap.capture.PacketCapture</javahClassName>
-							</javahClassNames>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
