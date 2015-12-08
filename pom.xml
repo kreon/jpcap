@@ -10,8 +10,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.3</version>
 				<configuration>
-					<source>1.4</source>
-					<target>1.4</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -20,7 +20,7 @@
 				<version>1.0-alpha-8</version>
 				<extensions>true</extensions>
 				<configuration>
-					<javahOS>darwin</javahOS>
+					<javahOS>linux</javahOS>
 					<javahOutputDirectory>source/cpp</javahOutputDirectory>
 					<javahClassNames>
 						<javahClassName>net.sourceforge.jpcap.capture.PacketCapture</javahClassName>
@@ -40,7 +40,9 @@
 					<linkerStartOptions>
 						<linkerStartOption>-shared -lpcap ${project.build.directory}/objs/jpcap.o ${project.build.directory}/objs/process.o</linkerStartOption>
 					</linkerStartOptions>
-					<linkerFinalName>jpcap.so</linkerFinalName>
+					<compilerStartOptions>
+						<compilerStartOption>-fPIC</compilerStartOption>
+					</compilerStartOptions>
 				</configuration>
 				<executions>
 					<execution>
@@ -51,7 +53,7 @@
 						</goals>
 						<inherited>false</inherited>
 						<configuration>
-							<javahOS>darwin</javahOS>
+							<javahOS>linux</javahOS>
 							<javahOutputDirectory>source/cpp</javahOutputDirectory>
 							<javahClassNames>
 								<javahClassName>net.sourceforge.jpcap.capture.PacketCapture</javahClassName>

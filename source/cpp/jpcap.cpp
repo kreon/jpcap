@@ -659,10 +659,7 @@ Java_net_sourceforge_jpcap_capture_PacketCapture_lookupDevices(JNIEnv *env,
 #endif /* HAVE_SA_LEN */
 
 	char *s;
-	while(ifr < last) {
-		char *__ifr = (char *) ifr;
-		__ifr += ifrSize;
-		ifr = (struct ifreq *) s;
+	for(;ifr < last; (char *) ifr += ifrSize, ifr = (struct ifreq *) s) {
 		/* Skip "dummy" and "alaias" interface */
 		/*
 		 if(strncmp(ifr->ifr_name,"dummy",5)==0 ||
